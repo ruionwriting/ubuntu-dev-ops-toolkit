@@ -42,6 +42,8 @@ We are all done in regards to installing the operating system. Before we continu
 
 > **Note**
 > The 1st snapshot might take a while if the virtual disk is large and all the size is allocated as defined in the VM configuration. We can continue to use the VM during this process.
+> 
+> Also possible that background snapshots([reddit](https://www.reddit.com/r/vmware/comments/tty79h/vmware_workstation_pro_16_very_slow_snapshots/)) might be the culpit. You can disabled them by going to VMware **Preferences**, **Priority** tab and untick _Take snapshots in the background when possible_ followed by shutdown the VM and start it again..
 
 Next we can set up and customise our Ubuntu installation.
 
