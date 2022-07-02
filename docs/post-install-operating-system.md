@@ -25,6 +25,14 @@ sudo reboot
 
 Now when maximizing the window or adjusting it's size we have the Ubuntu desktop to adapt the resolution. And bi-directional clipboard is expected to work as well.
 
+## Install common tools
+
+```shell
+sudo apt install -y \
+     curl \
+     vim
+```
+
 ## Regular maintenance
 
 ### Update the operating system
