@@ -1,5 +1,7 @@
 # Install operating system
 
+> At the end of this guide we'll have a fresh installation of Ubuntu. We'll take a snaphot and we'll be able to resume or redo our VM anytime from this point in time.
+
 We start by powering up the newly created virtual machine. The Ubuntu install should load:
 
 ![image](https://user-images.githubusercontent.com/1220067/177011070-1485a120-aaff-49a9-bab4-f5e03db7daeb.png)
