@@ -39,3 +39,6 @@ We are all done in regards to installing the operating system. Before we continu
 ![image](https://user-images.githubusercontent.com/1220067/177012314-b7cd8d66-5bc9-401d-8f4c-1b2938ba5320.png)
 
 Next we can set up and customise our Ubuntu installation.
+
+> **Note**
+> So far we've done the least interesting part of the setup because of so many manual actions. From this point forward I'll rellying more in automation assisted by scripts. Regarless I'll try to keep record of both ste-by-step instructions and script-based approach so that we can learn as well about the internals of the various configurations we make along the way.
