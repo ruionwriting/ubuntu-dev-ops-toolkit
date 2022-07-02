@@ -1,6 +1,6 @@
 # Create new virtual machine
 
-When completing these instructions you get a fresh installation of Ubuntu that you can then configure using the various guides, scripts or your own additions. It's a clean baseline that we can snapshot and evolve according our own needs/preferences.
+When completing these instructions you are ready to power on a new virtual machine and to install the operating system (I'll be using Ubuntu in these guides) that you can then configure using the various guides, scripts I provide or your own additions. It's a clean baseline that we can snapshot and evolve according our own needs/preferences.
 
 > **Note**
 > This guide assumes that you have a valid paid VMWare license. Player editions might work as well but it's something I've not tested as I favour using the Pro versions.
