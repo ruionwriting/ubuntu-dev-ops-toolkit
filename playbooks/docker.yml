@@ -1,0 +1,65 @@
+---
+# Implementation references:
+# https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+# https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04
+# https://github.com/docker/compose/releases
+- hosts: all
+  become: yes
+  vars:
+    docker_compose_version: "2.6.1"
+  tasks:
+    # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
+    - name: Update repositories cache
+      become: yes
+      apt:
+        update_cache: yes
+
+    # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_key_module.html
+    - name: Add Docker’s official GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        keyring: /etc/apt/keyrings/docker.gpg
+        state: present
+
+    # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html
+    - name: Add apt repository for stable version
+      apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        filename: /etc/apt/sources.list.d/docker.list
+        state: present
+
+    - name: Install Docker
+      apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      vars:
+        packages:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-compose-plugin
+
+    - name: Add user to docker group
+      become: yes
+      user:
+        # This doesn't work at all.
+        # name: "{{ ansible_user }}"
+        name: "{{ my_user }}"
+        group: docker
+      vars:
+        # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/env_lookup.html
+        my_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+
+    # Install Docker Compose
+    - name: Download docker-compose {{ docker_compose_version }}
+      get_url:
+        url: https://github.com/docker/compose/releases/download/v{{ docker_compose_version }}/docker-compose-linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: '+x'
+
+    # Clean any orphan packages after install
+    - name: Auto-remove orphan packages
+      become: yes
+      apt:
+        autoremove: yes
