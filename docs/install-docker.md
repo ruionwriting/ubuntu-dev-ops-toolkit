@@ -11,7 +11,7 @@ ansible-playbook -K -i hosts docker.yml
 
 This will:
 
-* Install Docker CE adding sources list so it's easy to upgrade
+* Install Docker CE adding sources list so it's easy to upgrade. See [Post-install operating system](./post-install-operating-system.md)
 * Add your user to the `docker` group so you can run `docker` commands without `sudo`
 * Download and install specified Docker Compose version defined by `docker_compose_version` variable (see _playbooks/docker.yml_)
 
