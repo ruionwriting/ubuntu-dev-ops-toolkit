@@ -1,7 +1,7 @@
 # Using Ansible
 
 > **Note**
-> This is work in progress as I learn Ansible or I get stuck at something. I'm not an Ansible expert neither I use it that offten to claim that I know Ansible.
+> This is work in progress as I learn Ansible or I get stuck at something. I'm not an Ansible expert neither I use it that often to claim that I know Ansible.
 
 ## Debug
 
