@@ -13,7 +13,7 @@ Ubuntu on VMware (Workstation/Fusion Pro) for multi-purpose development and auto
 > **TL;DR**;
 > I'm a macOS, Windows and Linux user. As an engineer focused on building and maintaining tools that help engineers to be effective on their daily work I found that one of the biggest challenge is the amount of variation that exists across the various platforms. I've found Ubuntu to be a very well-round desktop solution that can replace most of my needs in a consistent manner.
 
-- As a macOS user, most of my full-time job, I find my-self fighting some common wars:
+- As a macOS user, most of my full-time job, I find myself fighting some common wars:
   - Anything that depends on XCode like `gcc`, `cc`, `clang`, etc is subject to get broken frequently on major macOS updates, it's a PITA
   - Docker Desktop in macOS not only is slow but also it's kind not behave like "real" Docker, I don't care about shiny UI
 - As a Linux user, my personal choice for all things development (mostly study/exploring) outside work, I finds things a lot more flexible and fast but:
