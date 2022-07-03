@@ -32,7 +32,7 @@ Ubuntu on VMware (Workstation/Fusion Pro) for multi-purpose development and auto
 
 Why VMware?
 
-I've simply burn too many cycles with VirtualBox, don't take me wrong it's a nice bit of software for most virtualization needs but there are others around. I've learned over the years to appreciate VMware stability and I don't mind to pay for a license of software that just works and is predictable. **I'm not affiliate with or sponsored by VMware**.
+I've simply burn too many cycles with VirtualBox, don't take me wrong it's a nice bit of software for most virtualization needs but there are others around. I've learned over the years to appreciate VMware stability and I don't mind to pay for a license of software that just works and is predictable. **I'm not affiliated with or sponsored by VMware**.
 
 ## Minimal setup
 
