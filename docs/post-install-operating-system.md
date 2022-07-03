@@ -5,7 +5,14 @@
 >
 > VMware Tools might need to be installed so we can have clipboard sharing, free stretch of the screen, etc to work as desired. For Kubuntu at least the installation is advised after upgrading the operating system.
 
-## Update the operating system
+- [Ensure the operating system is up-to-date](#ensure-the-operating-system-is-up-to-date)
+- [Install VMware Tools](#install-vmware-tools)
+- [Install common tools](#install-common-tools)
+- [Regular maintenance](#regular-maintenance)
+  - [Update the operating system](#update-the-operating-system)
+  - [Remove orphan packages](#remove-orphan-packages)
+
+## Ensure the operating system is up-to-date
 
 ```shell
 sudo apt update && sudo apt upgrade
