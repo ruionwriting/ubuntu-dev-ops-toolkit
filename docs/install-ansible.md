@@ -1,99 +1,51 @@
-# Install Ansible
+# Install operating system
 
-> Ansible will be used all across to automate installing things onto our VM. This guide covers the basic for installation and to verify that Ansible is working for local. Ansible install will work as well for any other command Ansible workflow.
+> At the end of this guide we'll have a fresh installation of Ubuntu. We'll take a snapshot and we'll be able to resume or redo our VM anytime from this point in time.
 
-## Install
+We start by powering up the newly created virtual machine. The Ubuntu install should load:
 
-Refresh the system's package index:
-
-```shell
-sudo apt update
-```
-
-Install Ansible:
-
-```
-sudo apt install ansible
-```
-
-Check installed version:
-
-```shell
-$ ansible --version
-ansible 2.10.8
-  config file = None
-  configured module search path = ['/home/rui/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/lib/python3/dist-packages/ansible
-  executable location = /usr/bin/ansible
-  python version = 3.10.4 (main, Apr  2 2022, 09:04:19) [GCC 11.2.0]
-```
+![image](https://user-images.githubusercontent.com/1220067/177011070-1485a120-aaff-49a9-bab4-f5e03db7daeb.png)
 
 > **Note**
-> Your `$HOME` should have your user. This `rui` is my case.
+> From the previous screen and going forward is very possible that you'll see some different UI and wording as it varies across Ubuntu variants. Mostly I proceed with the examples to provide some guidance for most standard installations.
 
-## Testing a local playbook
+![image](https://user-images.githubusercontent.com/1220067/177011206-646bf93c-68d7-4c99-bbea-ee674992c228.png)
+
+Now I choose to install Ubuntu. It starts with _Keyboard layout_ that I adjust to my current hardware and/or preference:
 
 > **Note**
-> I know very little about Ansible so make no assumptions about this process being the most correct. Certainly I'll come back to this and redo this guide/steps.
+> Ensure that you apply your own preferences to avoid friction down the road.
 
-I've took inspiration from Adam Monsen [Ansible Hello World](https://github.com/meonkeys/ansible-hello-world) and Alexey Zalesny [How to run an Ansible playbook locally gist](https://gist.github.com/alces/caa3e7e5f46f9595f715f0f55eef65c1).
+![image](https://user-images.githubusercontent.com/1220067/177011262-8397371e-5ee8-4ab2-9f34-bf94a74129fa.png)
 
-1. Create a _playbooks_ folder:
+Hit `Continue`. Now for _Updates and other software_:
 
-   ```shell
-   mkdir playbooks
-   ```
+![image](https://user-images.githubusercontent.com/1220067/177011362-5722abb6-3bb4-4aff-9b30-89590f6a6ed4.png)
 
-2. Move to the new folder and create _hosts_ file with the following content:
+I recommend the selection presented here. Hit `Continue`.
 
-   ```ini
-   [test]
-   rui-virtual-machine ansible_connection=local
+![image](https://user-images.githubusercontent.com/1220067/177011394-8a504f04-842d-4d14-829e-feb13dfe6d33.png)
 
-   ```
+Hit `Install Now` and:
 
-   > **Note**
-   > This is my example hostname `rui-virtual-machine` change it accordingly to match your VM hostname.
+![image](https://user-images.githubusercontent.com/1220067/177011419-68d4d500-e45f-4233-9b7e-1f874f9754fb.png)
 
-3. Now create a file named _hello.yml_ with the following content:
+Hit `Continue`. Remaining options (_Timezone_, _User Info_ and _Install_) adjust according to your needs.
 
-   ```yaml
-   - hosts: rui-virtual-machine
-     tasks:
-       # see https://docs.ansible.com/ansible/ping_module.html
-       - name: test connection
-         ping:
+![image](https://user-images.githubusercontent.com/1220067/177012235-2de250f2-b5c5-4ed6-a99a-309e749f924a.png)
 
-   ```
+Hit `Restart Now`.
 
-4. Let's run the playbook:
+We are all done in regards to installing the operating system. Before we continue let's take a snapshot:
 
-   ```shell
-   $ ansible-playbook -i hosts hello.yml
+![image](https://user-images.githubusercontent.com/1220067/177012314-b7cd8d66-5bc9-401d-8f4c-1b2938ba5320.png)
 
-   PLAY [rui-virtual-machine] **************************************************************************
+> **Note**
+> The 1st snapshot might take a while if the virtual disk is large and all the size is allocated as defined in the VM configuration. We can continue to use the VM during this process.
+>
+> Also possible that background snapshots([reddit](https://www.reddit.com/r/vmware/comments/tty79h/vmware_workstation_pro_16_very_slow_snapshots/)) might be the culprit. You can disabled them by going to VMware **Preferences**, **Priority** tab and untick _Take snapshots in the background when possible_ followed by shutdown the VM and start it again..
 
-   TASK [Gathering Facts] ******************************************************************************
-   ok: [rui-virtual-machine]
+Next we can set up and customize our Ubuntu installation.
 
-   TASK [test connection] ******************************************************************************
-   ok: [rui-virtual-machine]
-
-   PLAY RECAP ******************************************************************************************
-   rui-virtual-machine        : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-
-   ```
-
-   Nice, we can run Ansible playbooks. We could also run the `ping` module directly and see more details about the hosts, in this case our guest VM:
-
-   ```shell
-   $ ansible all -i hosts -m ping
-   rui-virtual-machine | SUCCESS => {
-       "ansible_facts": {
-           "discovered_interpreter_python": "/usr/bin/python3"
-       },
-       "changed": false,
-       "ping": "pong"
-   }
-
-   ```
+> **Note**
+> So far we've done the least interesting part of the setup because of so many manual actions. From this point forward I'll relying more in automation assisted by scripts. Regardless I'll try to keep record of both ste-by-step instructions and script-based approach so that we can learn as well about the internals of the various configurations we make along the way.
