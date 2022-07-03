@@ -16,3 +16,4 @@ This will Visual Studio Code from official channel.
 > I've pretty much implemented these using Ansible. Its mostly educational:
 
 * [https://linuxhint.com/install_use_vs_code_ubuntu]()
+* [https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software#configuring-the-repositories]()
