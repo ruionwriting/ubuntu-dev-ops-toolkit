@@ -10,7 +10,6 @@
   tasks:
     # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
     - name: Update repositories cache
-      become: yes
       apt:
         update_cache: yes
 
@@ -41,7 +40,6 @@
           - docker-compose-plugin
 
     - name: Add user to docker group
-      become: yes
       user:
         # This doesn't work at all.
         # name: "{{ ansible_user }}"
@@ -60,6 +58,5 @@
 
     # Clean any orphan packages after install
     - name: Auto-remove orphan packages
-      become: yes
       apt:
         autoremove: yes
