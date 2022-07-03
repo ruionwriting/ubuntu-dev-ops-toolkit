@@ -49,9 +49,9 @@ I've took inspiration from Adam Monsen [Ansible Hello World](https://github.com/
    ```ini
    [test]
    rui-virtual-machine ansible_connection=local
-   
+
    ```
-   
+
    > **Note**
    > This is my example hostname `rui-virtual-machine` change it accordingly to match your VM hostname.
 
@@ -63,11 +63,11 @@ I've took inspiration from Adam Monsen [Ansible Hello World](https://github.com/
        # see https://docs.ansible.com/ansible/ping_module.html
        - name: test connection
          ping:
-         
+
    ```
 
 4. Let's run the playbook:
-   
+
    ```shell
    $ ansible-playbook -i hosts hello.yml
 
@@ -80,12 +80,12 @@ I've took inspiration from Adam Monsen [Ansible Hello World](https://github.com/
    ok: [rui-virtual-machine]
 
    PLAY RECAP ******************************************************************************************
-   rui-virtual-machine        : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+   rui-virtual-machine        : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
    ```
- 
+
    Nice, we can run Ansible playbooks. We could also run the `ping` module directly and see more details about the hosts, in this case our guest VM:
-   
+
    ```shell
    $ ansible all -i hosts -m ping
    rui-virtual-machine | SUCCESS => {
@@ -97,4 +97,3 @@ I've took inspiration from Adam Monsen [Ansible Hello World](https://github.com/
    }
 
    ```
-   
