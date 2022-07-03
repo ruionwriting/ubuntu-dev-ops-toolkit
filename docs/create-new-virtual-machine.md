@@ -5,7 +5,7 @@
 > **Note**
 > This guide assumes that you have a valid paid VMWare license. Player editions might work as well but it's something I've not tested as I favour using the Pro versions.
 >
-> You see that I'll be using fairly generous resources for my guest as this guide is more oriented to provide a complete development environment capable of running Docker and even nested virtualisation. Dependending on your needs you can later, following the setup instructions, add less or more resources.
+> You see that I'll be using fairly generous resources for my guest as this guide is more oriented to provide a complete development environment capable of running Docker and even nested virtualization. Depending on your needs you can later, following the setup instructions, add less or more resources.
 
 Open VMware Workstation Pro or VMware Fusion Pro and hit `Create a New Virtual Machine`:
 
@@ -19,9 +19,9 @@ We choose `Custom (advanced)` then hit `Next`. Compatibility we accept defaults:
 ![image](https://user-images.githubusercontent.com/1220067/177008680-98b732e8-c8af-4197-a51e-df6c7adabbd0.png)
 
 > **Note**
-> Before proceeding ensure that you have your prefered Ubuntu ISO already downloaded - I recommend always to use the latest LTS version. Go to [Download Ubuntu Desktop](https://ubuntu.com/download/desktop) and download the default edition or use the [Alternative downloads](https://ubuntu.com/download/alternative-downloads).
+> Before proceeding ensure that you have your preferred Ubuntu ISO already downloaded - I recommend always to use the latest LTS version. Go to [Download Ubuntu Desktop](https://ubuntu.com/download/desktop) and download the default edition or use the [Alternative downloads](https://ubuntu.com/download/alternative-downloads).
 >
-> In this guide I use [Kubuntu](https://kubuntu.org/getkubuntu/) from [Ubuntu flavours](https://ubuntu.com/desktop/flavours), its a personal preference so choose what you feel more confortable with.
+> In this guide I use [Kubuntu](https://kubuntu.org/getkubuntu/) from [Ubuntu flavours](https://ubuntu.com/desktop/flavours), its a personal preference so choose what you feel more comfortable with.
 
 I favor to have more control over the operating system install so I'll be installing it later:
 
@@ -57,14 +57,14 @@ Hit `Next`. The next steps will give us a virtual disk:
 
 Hit `Next`. We setup now the capacity:
 
-> ** Note**
+> **Note**
 > I favor not to use the defaults here as this guide main focus is to have a fully-working Linux desktop for productivity - performance is crucial.
 
 ![image](https://user-images.githubusercontent.com/1220067/177010367-a4a8f6ad-c235-4d31-8385-14074d7a5db8.png)
 
 Changes:
 
-* _Maximum disk size (GB)_ set to `120`, it can be less for your needs. If you plan to used this VM for nested virtualisation I would recommend `256` or `512`
+* _Maximum disk size (GB)_ set to `120`, it can be less for your needs. If you plan to used this VM for nested virtualization I would recommend `256` or `512`
 * I select _Allocate all disk space now_ and
 * _Store virtual disk as a single file_
 
@@ -72,13 +72,13 @@ Hit `Next`. I specify the location:
 
 ![image](https://user-images.githubusercontent.com/1220067/177010437-53a7123b-9d2a-4b23-b756-5c516e68cbeb.png)
 
-Adjust the path according to your preference and hit `Next`. We're almost and it's time to customize the harware:
+Adjust the path according to your preference and hit `Next`. We're almost and it's time to customize the hardware:
 
 ![image](https://user-images.githubusercontent.com/1220067/177010481-a528991a-0bd2-4e52-a695-6bafadfbce4c.png)
 
 Hit `Customize Hardware ...`. Now:
 
-* Select _Processors_ and tick _Virtualize Intel VT-x/EPT or AMD-V/RV1_ under _Virtualization engine_. This is required for nested virtualisation
+* Select _Processors_ and tick _Virtualize Intel VT-x/EPT or AMD-V/RV1_ under _Virtualization engine_. This is required for nested virtualization
 * Select _New CD/DVD (SATA)_ and select your ISO image file. This is required for the operating install
 * Select _Display_ and ensure that _Accelerate 3D graphics_ is ticked, _Graphics memory_ is set to the maximum and that the _Stretch mode_ is set to _Keep aspect ratio stretch_
 
