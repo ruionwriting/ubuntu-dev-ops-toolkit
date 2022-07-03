@@ -40,7 +40,14 @@ I've simply burn too many cycles with VirtualBox, don't take me wrong it's a nic
 
 ## Utilities and toolchains
 
-### Containerisation and Virtualisation
+> **Note**
+> All instructed `ansible-playbook` commands in this document assume that the minimal setup is complete and you run the commands inside your VM.
 
-* [Docker and Docker Compose](./docs/install-docker.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts docker.yml)` inside your VM
+### Containerisation and virtualisation
+
+* [Docker and Docker Compose](./docs/install-docker.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts docker.yml)`
+
+### Development tools/IDEs
+
+* [Visual Studio Code](./docs/install-vscode.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts vscode.yml)`
 
