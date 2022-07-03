@@ -1,0 +1,31 @@
+---
+# Implementation references:
+# https://linuxhint.com/install_use_vs_code_ubuntu/
+# https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software#configuring-the-repositories
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update repositories cache
+      apt:
+        update_cache: yes
+
+    - name: Add Microsoft GPG key
+      apt_key:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        state: present
+
+    - name: Add apt repository for stable version
+      apt_repository:
+        repo: "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+        filename: /etc/apt/sources.list.d/vscode.list
+        state: present
+
+    - name: Install VS Code
+      apt:
+        name: code
+        state: present
+        update_cache: yes
+
+    - name: Auto-remove orphan packages
+      apt:
+        autoremove: yes
