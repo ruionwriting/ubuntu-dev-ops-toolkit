@@ -17,6 +17,7 @@ Why? Read about the [motivation](#motivation) for this project.
   - [Containerization and virtualization](#containerization-and-virtualization)
   - [Infrastructure as Code (IaC)](#infrastructure-as-code-iac)
 - [Motivation](#motivation)
+- [License](#license)
 
 ---
 
@@ -106,3 +107,9 @@ I wanted a repeatable approach to work that can run on any host OS. Key aspects:
 Why I use VMware?
 
 I've simply burn too many cycles with VirtualBox and other free solutions. Don't take me wrong there are many good options around but there but I favor, for productivity, easy to use and adopt. I've learned over the years to appreciate VMware stability and I don't mind to pay for a license of a software that just works and is predictable.
+
+---
+
+## License
+
+This work is licensed under Apache-2.0. See the [LICENSE.txt](LICENSE.txt) file for more information.
