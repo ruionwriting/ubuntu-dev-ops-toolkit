@@ -20,7 +20,7 @@ Now I choose to install Ubuntu. It starts with _Keyboard layout_ that I adjust t
 
 Hit `Continue`. Now for _Updates and other software_:
 
-![image](https://user-images.githubusercontent.com/1220067/177011362-5722abb6-3bb4-4aff-9b30-89590f6a6ed4.png)
+<missing image>
 
 I recommend the selection presented here. Hit `Continue`.
 
