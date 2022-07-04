@@ -1,42 +1,45 @@
-# Highly opinionated Ubuntu all-purpose DevOps running on VWware
+# Ubuntu DevOps Toolkit
 
-Ubuntu on VMware (Workstation/Fusion Pro) for multi-purpose development and automation tasks.
+---
 
-- [Motivation](#motivation)
+[Ubuntu DevOps Toolkit](https://github.com/ruionwriting/ubuntu-dev-ops-toolkit) (UDOT) is a highly opinionated Ubuntu all-purpose DevOps environment setup that can run bare-metal or in a virtual machine. From general code development, IaC, containerization, virtualization and testing tools, I've got you covered.
+
+Why? Read about the [motivation](#motivation) for this project.
+
+**In this document**:
+
+- [Current Status](#current-status)
 - [Minimal setup](#minimal-setup)
 - [Utilities and toolchains](#utilities-and-toolchains)
-  - [Containerization and virtualization](#containerization-and-virtualization)
   - [Development tools/IDEs](#development-toolsides)
+  - [Testing tools](#testing-tools)
+  - [Language/runtimes](#languageruntimes)
+  - [Containerization and virtualization](#containerization-and-virtualization)
+  - [Infrastructure as Code (IaC)](#infrastructure-as-code-iac)
+- [Motivation](#motivation)
 
-## Motivation
+---
 
-> **TL;DR**;
-> I'm a macOS, Windows and Linux user. As an engineer focused on building and maintaining tools that help engineers to be effective on their daily work I found that one of the biggest challenge is the amount of variation that exists across the various platforms. I've found Ubuntu to be a very well-round desktop solution that can replace most of my needs in a consistent manner.
+## Current Status
 
-- As a macOS user, most of my full-time job, I find myself fighting some common wars:
-  - Anything that depends on XCode like `gcc`, `cc`, `clang`, etc is subject to get broken frequently on major macOS updates, it's a PITA
-  - Docker Desktop in macOS not only is slow but also it's kind not behave like "real" Docker, I don't care about shiny UI
-- As a Linux user, my personal choice for all things development (mostly study/exploring) outside work, I finds things a lot more flexible and fast but:
-  - I'm not a Linux top expert and once in a while I just screw-up big time and can break my workflows, I need to have an environment that I can rebuild fast in a repeatable fashion
-- As a Windows user - it works great for me in things link general use, gaming, audio/video production - I find it very hard to work for engineering tasks:
-  - Hyper-V and Docker Desktop, and VirtualBox (yeah because I need it sometimes)
-  - WSL2 can me a mess to get it right and to work all the time
-  - Version managers for Ruby, NodeJS, Python, etc are a pain or non-existing
-  - I know PowerShell is getting better but why to I need to ignore all the POSIX stuff I know
-- I want a repeatable approach to work that can run on any host OS:
-  - A single thing/process to maintain and evolve
-  - Easy to automate using Ansible (or Bash or whatever you fancy)
-  - Checkout this repo and use provides docs, scripts and playbooks and have peace of mind that I can get into a working state quickly
-  - Something that works for personal and corporate situations
-  - Having the ability to snapshot at any moment and to enable to rollback in case I get in trouble - I want to be productive
+Ubuntu DevOps Toolkit is **currently tested with bare-metal or virtualized using VMware Workstation Pro and VMware Fusion Pro**, so Linux, macOS and Windows hosts can be used. I do plan to expand to and cover VirtualBox, VWware Workstation Pro and VMware Fusion Player.
 
-Why VMware?
+Feature|Bare-metal|VMware Workstation Pro|VMware Fusion Pro|VWware Workstation Player|VMware Fusion Player|VirtualBox
+-|:-:|:-:|:-:|:-:|:-:|:-:
+Guest OS|_N/A_|Linux or Windows|macOS|Linux or Windows|macOS|Linux, macOS or Windows
+Performance|best|very good|very good|_TBC_|_TBC_|good, for most things
+Snapshots|_N/A_|&#10003;|&#10003;|_N/A_|_N/A_|&#10003;
+Limitations\*|none|none|none|_TBC_|_TBC_|_TBC_
 
-I've simply burn too many cycles with VirtualBox, don't take me wrong it's a nice bit of software for most virtualization needs but there are others around. I've learned over the years to appreciate VMware stability and I don't mind to pay for a license of a software that just works and is predictable. **I'm not affiliated with or sponsored by VMware**.
+(\*) UDOT offers a best-effort when it comes to testing, document and automation installation of the various tools but in some cases licensing or environment constraints may limit some functionality. I'll do my best to capture those here.
 
 ## Minimal setup
 
-1. [Create new virtual machine](./docs/create-new-virtual-machine.md)
+1. [Create new virtual machine](./docs/create-new-virtual-machine.md). Skip if using bare-metal.
+
+   > **Note**
+   > Refer to [Current Status](#current-status) to see what options currently covered.
+
 1. [Install operating system](./docs/install-operating-system.md)
 1. [Post-install operating system](./docs//post-install-operating-system.md)
 1. [Install Ansible](./docs/install-ansible.md)
@@ -49,10 +52,57 @@ I've simply burn too many cycles with VirtualBox, don't take me wrong it's a nic
 > **Note**
 > All instructed `ansible-playbook` commands in this document assume that the minimal setup is complete and you run the commands inside your VM.
 
-### Containerization and virtualization
-
-- [Docker and Docker Compose](./docs/install-docker.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts docker.yml)`
-
 ### Development tools/IDEs
 
 - [Visual Studio Code](./docs/install-vscode.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts vscode.yml)`
+
+### Testing tools
+
+- MockServer `WIP`
+- Newman `WIP` (CLI runner for Postman collections)
+- newman-reporter-htmlextra (HTML reporter for Newman)
+- Postman `WIP`
+
+### Language/runtimes
+
+- .NET `WIP`
+- Go `WIP`
+- Java `WIP`
+- NodeJS (using nvm) `WIP`
+- Python `WIP`
+- Ruby (using rbenv) `WIP`
+- Rust `WIP`
+
+### Containerization and virtualization
+
+- [Docker and Docker Compose](./docs/install-docker.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts docker.yml)`
+- Vagrant. `WIP`
+- VirtualBox. `WIP`
+
+### Infrastructure as Code (IaC)
+
+- Ansible. `WIP`
+- Chef. `WIP`
+- Terraform (bare). `WIP`
+- Terraform (using tfenv). `WIP`
+- Terragrunt (bare). `WIP`
+- Terragrunt (using tgenv). `WIP`
+
+## Motivation
+
+> **Note**
+> **I'm not affiliated with or sponsored by VMware.**
+
+As an engineer focused on building and maintaining tools that help engineers to be effective on their daily work I found that one of the biggest challenges is the amount of variation that exists across the various platforms. I've found Ubuntu to be a very well-round desktop solution that can replace most of my needs in a consistent manner.
+
+I wanted a repeatable approach to work that can run on any host OS. Key aspects:
+
+- A single thing/process to maintain and evolve
+- Easy to automate using Ansible (or Bash or whatever you fancy)
+- Checkout a single repo and use provided docs, scripts and playbooks and have peace of mind that I can get into a working state quickly
+- Something that works for personal and corporate situations
+- When using virtualization having the ability to snapshot at any moment and to enable to rollback in case I get in trouble - I want to be productive
+
+Why I use VMware?
+
+I've simply burn too many cycles with VirtualBox and other free solutions. Don't take me wrong there are many good options around but there but I favor, for productivity, easy to use and adopt. I've learned over the years to appreciate VMware stability and I don't mind to pay for a license of a software that just works and is predictable.
