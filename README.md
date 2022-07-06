@@ -77,8 +77,8 @@ Limitations\*|none|none|none|_TBC_|_TBC_|_TBC_
 ### Containerization and virtualization
 
 - [Docker and Docker Compose](./docs/install-docker.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts docker.yml)`
-- Vagrant. `WIP`
 - [VirtualBox](.docs/../docs/install-virtualbox.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts virtualbox.yml)`
+- [Vagrant](.docs/../docs/install-vagrant.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts vagrant.yml)`
 
 ### Infrastructure as Code (IaC)
 
