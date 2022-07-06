@@ -27,12 +27,13 @@ Ubuntu DevOps Toolkit is **currently tested with bare-metal or virtualized using
 
 Feature|Bare-metal|VMware Workstation Pro|VMware Fusion Pro|VWware Workstation Player|VMware Fusion Player|VirtualBox
 -|:-:|:-:|:-:|:-:|:-:|:-:
-Guest OS|_N/A_|Linux or Windows|macOS|Linux or Windows|macOS|Linux, macOS or Windows
+Guest OS|_N/A_|Linux or Windows|macOS|Linux or Windows|macOS|Linux, macOS\* or Windows
 Performance|best|very good|very good|_TBC_|_TBC_|good, for most things
 Snapshots|_N/A_|&#10003;|&#10003;|_N/A_|_N/A_|&#10003;
-Limitations\*|none|none|none|_TBC_|_TBC_|_TBC_
+Limitations\*\*|none|none|none|_TBC_|_TBC_|_TBC_
 
-(\*) UDOT offers a best-effort when it comes to testing, document and automation installation of the various tools but in some cases licensing or environment constraints may limit some functionality. I'll do my best to capture those here.
+(\*) Apple M1 chips not supported.
+(\*\*) UDOT offers a best-effort when it comes to testing, document and automation installation of the various tools but in some cases licensing or environment constraints may limit some functionality. I'll do my best to capture those here.
 
 ## Minimal setup
 
