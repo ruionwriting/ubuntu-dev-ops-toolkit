@@ -6,7 +6,6 @@ Assuming you have followed [Install Ansible](install-ansible.md) then is as simp
 
 ```shell
 ansible-playbook -K -i hosts docker.yml
-
 ```
 
 This will:

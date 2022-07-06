@@ -18,6 +18,7 @@ I recommend [GCM](https://github.com/GitCredentialManager/git-credential-manager
    ```shell
    curl -O https://github.com/GitCredentialManager/git-credential-manager/releases/download/v2.0.779/gcm-linux_amd64.2.0.779.deb
    ```
+
 1. Install example:
 
    ```shell
@@ -53,8 +54,7 @@ Them follow [GPG/pass compatible files](https://github.com/GitCredentialManager/
    ```shell
    git config --global commit.gpgsign true
    ```
-   
+
    ```shell
    git config --global user.signingkey ***********8D9
    ```
-   

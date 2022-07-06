@@ -12,7 +12,7 @@ sudo apt update
 
 Install Ansible:
 
-```
+```shell
 sudo apt install ansible
 ```
 

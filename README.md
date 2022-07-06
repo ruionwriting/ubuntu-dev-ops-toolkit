@@ -82,7 +82,7 @@ Limitations\*|none|none|none|_TBC_|_TBC_|_TBC_
 
 ### Infrastructure as Code (IaC)
 
-- Ansible. `WIP`
+- [Ansible](./docs/install-ansible.md) is part of our minimal setup. Read [Using Ansible](./docs/using-ansible.md) for some crude usage/troubleshooting notes
 - Chef. `WIP`
 - Terraform (bare). `WIP`
 - Terraform (using tfenv). `WIP`
