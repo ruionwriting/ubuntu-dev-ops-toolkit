@@ -1,0 +1,15 @@
+---
+# Implementation references:
+# N/A
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update repositories cache
+      apt:
+        update_cache: yes
+
+    - name: Install VirtualBox
+      apt:
+        name: virtualbox
+        state: present
+        update_cache: yes
