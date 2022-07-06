@@ -72,7 +72,7 @@ Limitations\*|none|none|none|_TBC_|_TBC_|_TBC_
 - NodeJS (using nvm) `WIP`
 - Python `WIP`
 - Ruby (using rbenv) `WIP`
-- Rust `WIP`
+- [Rust](./docs/install-rust.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts rust.yml)`
 
 ### Containerization and virtualization
 

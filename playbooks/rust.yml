@@ -1,0 +1,25 @@
+---
+# Implementation references:
+# https://www.rust-lang.org/tools/install
+# https://waylonwalker.com/til/install-rust/
+# https://dentrassi.de/2020/06/17/headless-installation-of-cargo-and-rust/
+- hosts: all
+  tasks:
+    - name: Check if Cargo is installed
+      shell: command -v cargo
+      register: cargo_exists
+      ignore_errors: yes
+
+    - name: Install dependencies
+      become: yes
+      apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      vars:
+        packages:
+          - curl
+
+    - name: Install Rust/Cargo
+      when: cargo_exists is failed
+      shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
