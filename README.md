@@ -67,10 +67,10 @@ Limitations\*\*|none|none|none|_TBC_|_TBC_|_TBC_
 
 ### Language/runtimes
 
-- .NET `WIP`
+- .NET (pre-installed)
 - Go `WIP`
 - Java `WIP`
-- NodeJS (using nvm) `WIP`
+- [Node.js](./docs/install-node.md) (using [nvm](https://github.com/nvm-sh/nvm))  or simply run `(cd playbooks && ansible-playbook -K -i hosts node.yml)`
 - Python `WIP`
 - Ruby (using rbenv) `WIP`
 - [Rust](./docs/install-rust.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts rust.yml)`

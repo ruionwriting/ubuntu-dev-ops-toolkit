@@ -1,0 +1,36 @@
+---
+# Implementation references:
+# https://github.com/nvm-sh/nvm#installing-and-updating
+- hosts: all
+  become: yes
+  vars:
+    nvm_version: "0.39.1"
+  tasks:
+    - name: Check if nvm is installed
+      shell: command -v nvm
+      register: nvm_exists
+      ignore_errors: yes
+
+    - name: Install dependencies
+
+      apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      vars:
+        packages:
+          - curl
+
+    - name: Install nvm v{{ nvm_version }}
+      when: nvm_exists is failed
+      register: nvm_installed
+      shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v{{ nvm_version }}/install.sh | bash
+
+    - name: Install latest LTS of Node.js
+      become_flags: -i
+      # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/env_lookup.html
+      become_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+      when:  nvm_installed is succeeded
+      shell: source ~/.nvm/nvm.sh && nvm install --lts
+      args:
+        executable: /bin/bash
