@@ -63,7 +63,7 @@ Limitations\*\*|none|none|none|_TBC_|_TBC_|_TBC_
 - MockServer `WIP`
 - Newman `WIP` (CLI runner for Postman collections)
 - newman-reporter-htmlextra (HTML reporter for Newman)
-- Postman `WIP`
+- [Postman](./docs/install-postman.md) or simply run `(cd playbooks && ansible-playbook -K -i hosts postman.yml)`
 
 ### Language/runtimes
 

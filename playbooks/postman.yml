@@ -1,0 +1,11 @@
+---
+# Implementation references:
+# https://learning.postman.com/docs/getting-started/installation-and-updates/#installing-postman-on-linux
+# https://docs.ansible.com/ansible/latest/collections/community/general/snap_module.html
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install Postman (via snap)
+      snap:
+        name:
+          - postman

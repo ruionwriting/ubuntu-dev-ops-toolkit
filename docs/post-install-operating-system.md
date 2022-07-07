@@ -22,6 +22,12 @@
 sudo apt update && sudo apt upgrade
 ```
 
+Snap packages:
+
+```shell
+sudo snap refresh
+```
+
 ---
 
 ## Install VMware Tools
