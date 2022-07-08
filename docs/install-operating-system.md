@@ -34,7 +34,8 @@ Hit `Continue`. Remaining options (_Timezone_, _User Info_ and _Install_) adjust
 
 ![image](https://user-images.githubusercontent.com/1220067/177012235-2de250f2-b5c5-4ed6-a99a-309e749f924a.png)
 
-Hit `Restart Now`.
+> **Warning**
+> Shutdown to ensure you can clone from the fresh install snapshot.
 
 We are all done in regards to installing the operating system. Before we continue let's take a snapshot:
 
