@@ -6,7 +6,7 @@
 - hosts: all
   become: yes
   vars:
-    docker_compose_version: "2.6.1"
+    docker_compose_version: "2.29.5"
   tasks:
     # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
     - name: Update repositories cache
